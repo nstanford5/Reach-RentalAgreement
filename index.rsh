@@ -69,7 +69,7 @@
      });
    };
  
-   // first participant creates the wager and deadline
+   // first participant creates the wager
    A.only(() => {
      const wager = declassify(interact.wager);
    });
@@ -79,7 +79,7 @@
      .pay(wager);
    commit();
  
-   // Hutch always accepts this wager
+   // promt the user to accept the wager
    B.only(() => {
      interact.acceptWager(wager);
    });
